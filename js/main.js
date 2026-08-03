@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = formData.get('message');
 
       // WhatsApp redirect
-      const waNumber = '6281234567890'; // Ganti dengan nomor WhatsApp
+      const waNumber = '6285731674467';
       const waMessage = encodeURIComponent(
         `Halo, saya ${name} (${email}).\n\n${message}`
       );
