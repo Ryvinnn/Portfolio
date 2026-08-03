@@ -1679,9 +1679,12 @@ section {
   }
   
   .hero-stats {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 32px;
+    padding-top: 24px;
+    width: 100%;
   }
   
   .hero-stat {
@@ -1689,7 +1692,12 @@ section {
   }
   
   .hero-stat .stat-number {
-    font-size: 1.6rem;
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+  }
+
+  .hero-stat .stat-label {
+    font-size: 0.75rem;
+    line-height: 1.3;
   }
   
   .services-grid {
@@ -1735,17 +1743,31 @@ section {
   }
   
   .about-stats {
-    grid-template-columns: 1fr;
-    max-width: 280px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 100%;
+    margin: 0;
   }
   
   .about-stat-card {
-    padding: 20px 12px;
+    padding: 14px 6px;
+    border-radius: var(--radius-md);
   }
   
+  .about-stat-card .stat-icon {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
   .about-stat-card .stat-number {
-    font-size: 1.6rem;
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+  }
+  
+  .about-stat-card .stat-label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin-top: 2px;
   }
   
   .torn-divider svg {
@@ -1773,19 +1795,40 @@ section {
 /* ---------- Small Mobile ---------- */
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding: 0 12px;
   }
   
   .hero-stats {
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
+    gap: 4px;
+  }
+
+  .hero-stat .stat-number {
+    font-size: 1.05rem;
+  }
+
+  .hero-stat .stat-label {
+    font-size: 0.7rem;
   }
   
   .about-stats {
-    grid-template-columns: 1fr;
-    max-width: 240px;
-    margin: 0 auto;
+    gap: 4px;
+  }
+
+  .about-stat-card {
+    padding: 12px 4px;
+  }
+
+  .about-stat-card .stat-icon {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+
+  .about-stat-card .stat-number {
+    font-size: 1.05rem;
+  }
+
+  .about-stat-card .stat-label {
+    font-size: 0.7rem;
   }
   
   .card {
