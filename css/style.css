@@ -68,6 +68,9 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -76,7 +79,10 @@ body {
   line-height: 1.7;
   color: var(--text-dark);
   background-color: var(--cream);
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -142,6 +148,9 @@ p {
 
 section {
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .section-navy {
@@ -637,12 +646,92 @@ section {
 .doodle-circle-1 { top: 20%; right: 10%; }
 .doodle-circle-2 { bottom: 30%; left: 2%; width: 40px; height: 40px; }
 
+/* ---------- Background Shape Decorations ---------- */
+/*
+  Reusable decorative SVG shapes (squiggle / garis liuk-liuk).
+  Usage:
+    - Drop a .bg-shape wrapper inside any section with position: relative
+    - Override --shape-color on the parent section to match the theme
+    - Use position modifiers: .bg-shape--tl, .bg-shape--tr, .bg-shape--bl, .bg-shape--br
+    - Use size modifiers: .bg-shape--sm, .bg-shape--lg, .bg-shape--xl
+    - Use rotation modifiers: .bg-shape--rotate-45, .bg-shape--rotate-90, etc.
+*/
+
+.bg-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+  opacity: 0.08;
+  animation: shape-drift 25s ease-in-out infinite alternate;
+}
+
+.bg-shape svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: var(--shape-color, currentColor);
+}
+
+/* ---- Size modifiers ---- */
+.bg-shape--sm  { width: 200px; height: 200px; }
+.bg-shape--md  { width: 360px; height: 360px; }
+.bg-shape--lg  { width: 500px; height: 500px; }
+.bg-shape--xl  { width: 680px; height: 680px; }
+
+/* ---- Position modifiers (off-center / clipped at edge) ---- */
+.bg-shape--tl { top: -8%;  left: -6%; }
+.bg-shape--tr { top: -10%; right: -8%; }
+.bg-shape--bl { bottom: -12%; left: -5%; }
+.bg-shape--br { bottom: -8%;  right: -7%; }
+.bg-shape--cl { top: 30%;  left: -10%; }
+.bg-shape--cr { top: 20%;  right: -10%; }
+
+/* ---- Rotation modifiers ---- */
+.bg-shape--rotate-45  { transform: rotate(45deg); }
+.bg-shape--rotate-90  { transform: rotate(90deg); }
+.bg-shape--rotate-135 { transform: rotate(135deg); }
+.bg-shape--rotate-180 { transform: rotate(180deg); }
+.bg-shape--rotate-225 { transform: rotate(225deg); }
+.bg-shape--rotate-270 { transform: rotate(270deg); }
+
+/* ---- Opacity variations ---- */
+.bg-shape--faint  { opacity: 0.05; }
+.bg-shape--subtle { opacity: 0.10; }
+.bg-shape--soft   { opacity: 0.12; }
+
+/* ---- Theme-specific shape color overrides ---- */
+.section-navy .bg-shape {
+  --shape-color: rgba(255, 255, 255, 1);
+}
+
+.section-cream .bg-shape {
+  --shape-color: var(--navy);
+}
+
+/* ---- Drift animation ---- */
+@keyframes shape-drift {
+  0%   { transform: translate(0, 0) var(--shape-rotate, rotate(0deg)); }
+  100% { transform: translate(12px, -8px) var(--shape-rotate, rotate(0deg)); }
+}
+
+/* Rotation + drift combos via custom property */
+.bg-shape--rotate-45  { --shape-rotate: rotate(45deg); }
+.bg-shape--rotate-90  { --shape-rotate: rotate(90deg); }
+.bg-shape--rotate-135 { --shape-rotate: rotate(135deg); }
+.bg-shape--rotate-180 { --shape-rotate: rotate(180deg); }
+.bg-shape--rotate-225 { --shape-rotate: rotate(225deg); }
+.bg-shape--rotate-270 { --shape-rotate: rotate(270deg); }
+
 /* ---------- Section Dividers (Torn Paper Effect) ---------- */
 .torn-divider {
   position: relative;
   z-index: 5;
   line-height: 0;
   margin-top: -1px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .torn-divider svg {
@@ -1590,7 +1679,13 @@ section {
   }
   
   .hero-stats {
-    gap: 24px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .hero-stat {
+    text-align: center;
   }
   
   .hero-stat .stat-number {
@@ -1640,8 +1735,9 @@ section {
   }
   
   .about-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
   }
   
   .about-stat-card {
@@ -1666,7 +1762,10 @@ section {
     font-size: 1rem;
   }
   
-  .doodle {
+  .doodle,
+  .bg-shape,
+  .deco-dots,
+  .deco-ring {
     display: none;
   }
 }
