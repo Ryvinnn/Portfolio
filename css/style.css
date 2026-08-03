@@ -752,8 +752,23 @@ section {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 32px 64px;
   align-items: center;
+}
+
+.about-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.about-stats {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.about-cta {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .about-content h2 {
@@ -1582,8 +1597,15 @@ section {
   
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
     text-align: center;
+  }
+  
+  .about-content,
+  .about-stats,
+  .about-cta {
+    grid-column: auto;
+    grid-row: auto;
   }
   
   .about-tags {
