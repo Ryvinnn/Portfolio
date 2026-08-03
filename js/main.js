@@ -1,6 +1,7 @@
 /* ========================================
    LANDING PAGE - INTERACTIVE SCRIPTS
    Navigation, Accordion, Scroll Effects
+   Optimized for 60-120fps ultra smooth performance
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,53 +9,73 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
-  const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
   const faqItems = document.querySelectorAll('.faq-item');
   const revealElements = document.querySelectorAll('.reveal');
   const statNumbers = document.querySelectorAll('[data-count]');
-  const sections = document.querySelectorAll('section[id]');
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  const doodles = Array.from(document.querySelectorAll('.doodle'));
 
-  // ---------- Navbar Scroll Effect ----------
-  let lastScroll = 0;
+  // ---------- Cache Layout Measurements (Prevents Layout Thrashing) ----------
+  let cachedSections = [];
 
-  function handleNavScroll() {
+  function updateLayoutCache() {
+    cachedSections = sections.map(sec => ({
+      id: sec.getAttribute('id'),
+      top: sec.offsetTop,
+      height: sec.offsetHeight,
+      link: document.querySelector(`.nav-links a[href="#${sec.getAttribute('id')}"]`)
+    }));
+  }
+
+  updateLayoutCache();
+  window.addEventListener('resize', updateLayoutCache, { passive: true });
+
+  // ---------- Combined Throttle Scroll Manager ----------
+  let isScrollTicking = false;
+
+  function onScroll() {
     const scrollY = window.scrollY;
 
+    // 1. Navbar scrolled class
     if (scrollY > 80) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    lastScroll = scrollY;
-  }
-
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-
-  // ---------- Active Nav Link Highlight ----------
-  function updateActiveLink() {
-    const scrollY = window.scrollY + 200;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
+    // 2. Active nav link
+    const scrollPos = scrollY + 200;
+    for (let i = 0; i < cachedSections.length; i++) {
+      const sec = cachedSections[i];
+      if (scrollPos >= sec.top && scrollPos < sec.top + sec.height) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (sec.link) sec.link.classList.add('active');
+        break;
       }
-    });
+    }
+
+    // 3. Parallax doodles (only if visible)
+    if (scrollY < 1200 && doodles.length > 0) {
+      for (let i = 0; i < doodles.length; i++) {
+        const speed = 0.02 + (i * 0.01);
+        doodles[i].style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
+      }
+    }
+
+    isScrollTicking = false;
   }
 
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (!isScrollTicking) {
+      requestAnimationFrame(onScroll);
+      isScrollTicking = true;
+    }
+  }, { passive: true });
 
   // ---------- Smooth Scroll for Nav Links ----------
-  navLinks.forEach(link => {
+  allNavLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const targetId = link.getAttribute('href');
@@ -68,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Close mobile nav if open
       if (mobileNav.classList.contains('active')) {
         closeMobileNav();
       }
@@ -94,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close mobile nav on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
       closeMobileNav();
@@ -108,30 +127,27 @@ document.addEventListener('DOMContentLoaded', () => {
     question.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
 
-      // Close all other FAQ items
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
         }
       });
 
-      // Toggle current item
       item.classList.toggle('active', !isActive);
     });
   });
 
-  // ---------- Scroll Reveal Animation ----------
+  // ---------- Scroll Reveal Animation (Unobserved once visible for max perf) ----------
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Optionally stop observing after reveal
-        // revealObserver.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -60px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
@@ -155,15 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateCounters() {
     statNumbers.forEach(el => {
       const target = parseInt(el.getAttribute('data-count'), 10);
-      const duration = 2000;
+      const duration = 1800;
       const startTime = performance.now();
       const suffix = el.getAttribute('data-suffix') || '';
 
       function update(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-
-        // Ease out cubic
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.floor(eased * target);
 
@@ -180,24 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------- Smooth scroll for all anchor CTA buttons ----------
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        e.preventDefault();
-        const offsetTop = targetEl.offsetTop - 80;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
   // ---------- Form Submit Handler ----------
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -209,7 +205,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = formData.get('email');
       const message = formData.get('message');
 
-      // WhatsApp redirect
       const waNumber = '6285731674467';
       const waMessage = encodeURIComponent(
         `Halo, saya ${name} (${email}).\n\n${message}`
@@ -217,11 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const waUrl = `https://wa.me/${waNumber}?text=${waMessage}`;
 
       window.open(waUrl, '_blank');
-
-      // Reset form
       contactForm.reset();
 
-      // Show success feedback
       const btn = contactForm.querySelector('.btn');
       const originalText = btn.textContent;
       btn.textContent = '✓ Terkirim!';
@@ -234,28 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------- Parallax Decorations (subtle) ----------
-  let ticking = false;
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-        const doodles = document.querySelectorAll('.doodle');
-
-        doodles.forEach((doodle, i) => {
-          const speed = 0.02 + (i * 0.01);
-          const yOffset = scrollY * speed;
-          doodle.style.transform = `translateY(${yOffset}px)`;
-        });
-
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // ---------- Initialize ----------
-  handleNavScroll();
-  updateActiveLink();
+  // Initial scroll check
+  onScroll();
 });

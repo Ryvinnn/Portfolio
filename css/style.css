@@ -174,6 +174,7 @@ section {
   overflow: hidden;
   width: 100%;
   max-width: 100%;
+  contain: layout style;
 }
 
 .section-navy {
@@ -335,6 +336,7 @@ section {
 .card-navy {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -356,6 +358,7 @@ section {
 
 .navbar.scrolled {
   background: rgba(14, 26, 58, 0.95);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   padding: 12px 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -462,6 +465,7 @@ section {
   position: fixed;
   inset: 0;
   background: rgba(14, 26, 58, 0.98);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 999;
   flex-direction: column;
@@ -1655,13 +1659,14 @@ section {
 /* ---------- Scroll Reveal ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translate3d(0, 30px, 0);
+  will-change: opacity, transform;
   transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .reveal-delay-1 {
