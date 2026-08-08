@@ -1315,7 +1315,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .pricing-card {
@@ -1325,6 +1325,9 @@ section {
   padding: 40px 32px;
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pricing-card.featured {
@@ -1409,6 +1412,7 @@ section {
 
 .pricing-features {
   margin-bottom: 32px;
+  flex-grow: 1;
 }
 
 .pricing-features li {
@@ -1437,6 +1441,7 @@ section {
 
 .pricing-card .btn {
   width: 100%;
+  margin-top: auto;
 }
 
 /* ---------- FAQ Section ---------- */
