@@ -1,17 +1,53 @@
-{
+﻿{
   "version": "0.2.0",
   "configurations": [
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Debug dengan Chrome",
-      "file": "${workspaceFolder}/index.html"
+      "name": "🌐 Debug dengan Chrome (File Direct)",
+      "file": "${workspaceFolder}/index.html",
+      "sourceMaps": true,
+      "userDataDir": true
     },
     {
       "type": "msedge",
       "request": "launch",
-      "name": "Debug dengan Edge",
-      "file": "${workspaceFolder}/index.html"
+      "name": "🌐 Debug dengan Edge (File Direct)",
+      "file": "${workspaceFolder}/index.html",
+      "sourceMaps": true,
+      "userDataDir": true
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "🚀 Debug dengan Chrome (Localhost:3000)",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "🚀 Debug dengan Edge (Localhost:3000)",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "⚡ Debug dengan Chrome (Live Server :5500)",
+      "url": "http://127.0.0.1:5500",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "⚡ Debug dengan Edge (Live Server :5500)",
+      "url": "http://127.0.0.1:5500",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true
     }
   ]
 }

@@ -1170,7 +1170,6 @@ section {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  group: true;
   aspect-ratio: 16 / 11;
 }
 
