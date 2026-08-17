@@ -7,34 +7,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Project Data ----------
   const projectsData = {
-    'tokobaju': {
-      name: 'TokoBaju.id',
-      type: 'E-Commerce',
+    'travelmalang': {
+      name: 'travelmalang.id',
+      type: 'Travel & Tour',
       client: 'Rina Santika',
-      projectType: 'E-Commerce Fashion',
+      projectType: 'Travel & Tour Website',
       surfaceArea: 'Multi-page Web App',
-      location: 'Jakarta, Indonesia',
-      tags: ['E-Commerce', 'React', 'Node.js'],
-      image: 'assets/portfolio-ecommerce.png',
+      location: 'Malang, Indonesia',
+      tags: ['Travel & Tour', 'Booking System', 'Web App'],
+      image: 'assets/portfolio-travelmalang.png',
+      gallery: [
+        'assets/travelmalang/travelmalang-1.png',
+        'assets/travelmalang/travelmalang-2.png',
+        'assets/travelmalang/travelmalang-3.png',
+        'assets/travelmalang/travelmalang-4.png'
+      ],
       description: `
-        <p>TokoBaju.id adalah platform e-commerce fashion online yang dirancang untuk memberikan pengalaman belanja yang mulus dan menyenangkan. Dengan desain yang bersih dan modern, website ini memungkinkan pengguna untuk menelusuri katalog produk, memfilter berdasarkan kategori, dan melakukan pembelian dengan mudah.</p>
-        <p>Kami membangun platform ini menggunakan React untuk frontend yang responsif dan interaktif, dengan Node.js di backend untuk menangani operasi server-side. Fitur utama meliputi sistem keranjang belanja real-time, integrasi payment gateway, manajemen inventori, dan dashboard admin untuk pengelolaan produk.</p>
-        <p>Hasil akhirnya adalah sebuah toko online yang tidak hanya indah secara visual, tetapi juga powerful secara fungsional — menghasilkan peningkatan konversi sebesar 40% sejak peluncuran.</p>
+        <p>travelmalang.id adalah platform layanan travel dan tur wisata yang dirancang untuk memberikan kemudahan bagi wisatawan dalam memesan paket liburan, sewa armada, dan perjalanan di area Malang & Bromo. Dengan antarmuka yang modern, bersih, dan intuitif, pengguna dapat dengan mudah memilih paket perjalanan yang diinginkan.</p>
+        <p>Website ini dilengkapi dengan katalog paket wisata interaktif, pilihan destinasi populer, sistem informasi armada, serta integrasi pemesanan cepat via WhatsApp & form booking. Didesain dengan fokus pada kemudahan navigasi dan pengalaman pengguna (UX) yang prima di berbagai perangkat mobile maupun desktop.</p>
+        <p>Hasilnya adalah sebuah platform travel digital yang elegan dan responsif — membantu meningkatkan visibilitas usaha dan mempermudah calon wisatawan merencanakan perjalanan mereka ke Malang.</p>
       `
     },
-    'kedai-nusantara': {
-      name: 'Kedai Nusantara',
-      type: 'Restaurant Website',
+    'tokoroti': {
+      name: 'tokoroti.id',
+      type: 'Bakery & Toko Roti',
       client: 'Andi Pratama',
-      projectType: 'Restaurant & Kuliner',
-      surfaceArea: 'Landing Page + Menu',
+      projectType: 'Bakery Website',
+      surfaceArea: 'Landing Page + Catalog',
       location: 'Surabaya, Indonesia',
-      tags: ['Restaurant', 'WordPress', 'SEO'],
-      image: 'assets/portfolio-restaurant.png',
+      tags: ['Bakery', 'WordPress', 'Catalog'],
+      image: 'assets/portfolio-tokoroti.png',
+      gallery: [
+        'assets/tokoroti/tokoroti-1.png',
+        'assets/tokoroti/tokoroti-2.png',
+        'assets/tokoroti/tokoroti-3.png',
+        'assets/tokoroti/tokoroti-4.png'
+      ],
       description: `
-        <p>Kedai Nusantara membutuhkan website yang bisa merepresentasikan cita rasa autentik masakan Indonesia mereka. Kami mendesain website dengan nuansa hangat dan inviting, menampilkan foto-foto makanan berkualitas tinggi yang menggugah selera.</p>
-        <p>Dibangun di atas WordPress untuk kemudahan pengelolaan konten, website ini dilengkapi dengan halaman menu interaktif, sistem reservasi online, galeri foto, dan integrasi Google Maps untuk lokasi restoran. SEO optimization juga diterapkan untuk meningkatkan visibilitas di pencarian lokal.</p>
-        <p>Sejak diluncurkan, website ini berhasil meningkatkan reservasi online sebesar 60% dan menjadi salah satu sumber utama pelanggan baru bagi Kedai Nusantara.</p>
+        <p>tokoroti.id adalah platform toko roti digital modern yang dirancang untuk memamerkan berbagai varian roti dan kue berkualitas tinggi serta mempermudah pemesanan online bagi pelanggan.</p>
+        <p>Dibangun di atas WordPress untuk kemudahan pengelolaan katalog produk, website ini dilengkapi dengan tampilan visual menu yang menggugah selera, sistem pemesanan langsung via WhatsApp, serta integrasi lokasi toko.</p>
+        <p>Hasilnya adalah sebuah platform bakery online yang menarik, mudah digunakan, dan efektif dalam meningkatkan penjualan serta jangkauan pelanggan.</p>
       `
     },
     'pt-maju-bersama': {
@@ -135,12 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImage.src = data.image;
     mainImage.alt = data.name;
 
-    // Populate thumbnails (use same image with different visual treatment)
+    // Populate thumbnails
     thumbsContainer.innerHTML = '';
-    for (let i = 0; i < 4; i++) {
+    const galleryList = data.gallery || [data.image, data.image, data.image, data.image];
+    galleryList.forEach((imgSrc, i) => {
       const thumb = document.createElement('div');
       thumb.className = `project-gallery-thumb${i === 0 ? ' active' : ''}`;
-      thumb.innerHTML = `<img src="${data.image}" alt="${data.name} - View ${i + 1}" loading="lazy">`;
+      thumb.innerHTML = `<img src="${imgSrc}" alt="${data.name} - View ${i + 1}" loading="lazy">`;
       thumb.addEventListener('click', () => {
         // Switch active thumb
         thumbsContainer.querySelectorAll('.project-gallery-thumb').forEach(t => t.classList.remove('active'));
@@ -149,13 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
         mainImage.style.opacity = '0';
         mainImage.style.transform = 'scale(0.98)';
         setTimeout(() => {
-          mainImage.src = data.image;
+          mainImage.src = imgSrc;
           mainImage.style.opacity = '1';
           mainImage.style.transform = 'scale(1)';
         }, 200);
       });
       thumbsContainer.appendChild(thumb);
-    }
+    });
 
     // Populate info
     infoClient.textContent = data.client;
