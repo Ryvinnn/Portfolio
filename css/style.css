@@ -73,6 +73,11 @@ html {
   overflow-x: hidden;
 }
 
+html.modal-open,
+body.modal-open {
+  overflow: hidden !important;
+}
+
 body {
   font-family: var(--font-body);
   font-size: 16px;

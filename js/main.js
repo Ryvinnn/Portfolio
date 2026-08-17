@@ -99,6 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeMobileNav() {
     hamburger.classList.remove('active');
     mobileNav.classList.remove('active');
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
   }
 
@@ -110,6 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       hamburger.classList.add('active');
       mobileNav.classList.add('active');
+      document.documentElement.classList.add('modal-open');
+      document.body.classList.add('modal-open');
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     }
   });

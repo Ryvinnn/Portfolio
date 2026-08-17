@@ -15,6 +15,25 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: rgba(14, 26, 58, 0.6);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(74, 123, 247, 0.5) var(--navy-darker, #0E1A3A);
+}
+
+.project-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-modal::-webkit-scrollbar-track {
+  background: var(--navy-darker, #0E1A3A);
+}
+
+.project-modal::-webkit-scrollbar-thumb {
+  background: rgba(74, 123, 247, 0.4);
+  border-radius: 4px;
+}
+
+.project-modal::-webkit-scrollbar-thumb:hover {
+  background: var(--accent, #4A7BF7);
 }
 
 .project-modal.active {

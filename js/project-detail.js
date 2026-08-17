@@ -190,6 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show modal
     modal.classList.add('active');
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 
     // Scroll modal to top
@@ -202,6 +205,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- Close Modal ----------
   function closeModal() {
     modal.classList.remove('active');
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
 
     // Remove hash
