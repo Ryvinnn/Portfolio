@@ -7,106 +7,118 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Project Data ----------
   const projectsData = {
-    'travelmalang': {
-      name: 'travelmalang.id',
-      type: 'Travel & Tour',
-      client: 'Rina Santika',
-      projectType: 'Travel & Tour Website',
-      surfaceArea: 'Multi-page Web App',
-      location: 'Malang, Indonesia',
-      tags: ['Travel & Tour', 'Booking System', 'Web App'],
-      image: 'assets/portfolio-travelmalang.png',
+    'suru-workspace': {
+      name: 'Suru Workspace',
+      type: 'Web Application / Productivity SaaS',
+      client: 'Suru Workspace',
+      projectType: 'Web Application / Productivity SaaS',
+      surfaceArea: 'Personal Productivity Workspace',
+      location: 'Cloud / Vercel',
+      tags: ['Web Application', 'Productivity SaaS', 'React 19', 'Vite', 'Supabase', 'Tailwind CSS'],
+      image: 'assets/suru-dashboard.png',
       gallery: [
-        'assets/travelmalang/travelmalang-1.png',
-        'assets/travelmalang/travelmalang-2.png',
-        'assets/travelmalang/travelmalang-3.png',
-        'assets/travelmalang/travelmalang-4.png'
+        'assets/suru-dashboard.png',
+        'assets/suru-projects.png',
+        'assets/suru-goals.png',
+        'assets/suru-tasks.png'
       ],
       description: `
-        <p>travelmalang.id adalah platform layanan travel dan tur wisata yang dirancang untuk memberikan kemudahan bagi wisatawan dalam memesan paket liburan, sewa armada, dan perjalanan di area Malang & Bromo. Dengan antarmuka yang modern, bersih, dan intuitif, pengguna dapat dengan mudah memilih paket perjalanan yang diinginkan.</p>
-        <p>Website ini dilengkapi dengan katalog paket wisata interaktif, pilihan destinasi populer, sistem informasi armada, serta integrasi pemesanan cepat via WhatsApp & form booking. Didesain dengan fokus pada kemudahan navigasi dan pengalaman pengguna (UX) yang prima di berbagai perangkat mobile maupun desktop.</p>
-        <p>Hasilnya adalah sebuah platform travel digital yang elegan dan responsif — membantu meningkatkan visibilitas usaha dan mempermudah calon wisatawan merencanakan perjalanan mereka ke Malang.</p>
+        <p>Suru Workspace adalah aplikasi produktivitas berbasis web yang dirancang untuk membantu pengguna mengelola project, menetapkan goals, menyusun tugas harian, dan memantau progres pekerjaan dalam satu workspace terpadu.</p>
+        <p>Aplikasi ini menyediakan dashboard terpusat, pengelolaan project, tracking goals, manajemen tasks, serta penyimpanan data pengguna. Antarmukanya dirancang agar aktivitas dan perkembangan setiap project dapat dipantau dengan lebih terstruktur.</p>
+        <h4>Fitur utama:</h4>
+        <ul>
+          <li><strong>Dashboard produktivitas:</strong> Menampilkan ringkasan metrik kinerja, streak aktif, daftar deadline kritis, dan pemantauan tugas secara terpusat.</li>
+          <li><strong>Manajemen project dan tracking progres:</strong> Memantau tahapan deliverable, siklus pengembangan, milestone, dan progres penyelesaian inisiatif.</li>
+          <li><strong>Pengelolaan goals dan target:</strong> Membantu menetapkan sasaran strategis jangka panjang dengan breakdown milestone terukur dan tracking persentase keberhasilan.</li>
+          <li><strong>Manajemen tasks dan perencanaan aktivitas:</strong> Merencanakan alur kerja harian, filter tiket prioritas, estimasi durasi, dan checklist pekerjaan.</li>
+          <li><strong>Autentikasi pengguna dan penyimpanan data berdasarkan akun:</strong> Mendukung sinkronisasi data cloud real-time via Supabase dan persistensi mode tamu lokal.</li>
+          <li><strong>Tampilan responsif untuk desktop dan perangkat mobile:</strong> Desain antarmuka fleksibel yang nyaman diakses melalui berbagai resolusi perangkat.</li>
+        </ul>
+        <h4>Teknologi:</h4>
+        <ul>
+          <li><strong>React 19 & React Router 7:</strong> Framework aplikasi modern berbasis komponen dan navigasi SPA.</li>
+          <li><strong>Vite:</strong> Build tool dan frontend bundler berkinerja tinggi.</li>
+          <li><strong>Tailwind CSS:</strong> Utilitas styling responsif dengan Stitch design tokens.</li>
+          <li><strong>Supabase:</strong> Backend cloud database PostgreSQL, sinkronisasi data, dan autentikasi pengguna.</li>
+          <li><strong>Material Symbols:</strong> Google modern typography dan sistem ikonografi.</li>
+          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://suruwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://suruwp.vercel.app/</a>).</li>
+        </ul>
+      `
+    },
+    'travelmalang': {
+      name: 'Suru Workspace',
+      type: 'Web Application / Productivity SaaS',
+      client: 'Suru Workspace',
+      projectType: 'Web Application / Productivity SaaS',
+      surfaceArea: 'Personal Productivity Workspace',
+      location: 'Cloud / Vercel',
+      tags: ['Web Application', 'Productivity SaaS', 'React 19', 'Vite', 'Supabase', 'Tailwind CSS'],
+      image: 'assets/suru-dashboard.png',
+      gallery: [
+        'assets/suru-dashboard.png',
+        'assets/suru-projects.png',
+        'assets/suru-goals.png',
+        'assets/suru-tasks.png'
+      ],
+      description: `
+        <p>Suru Workspace adalah aplikasi produktivitas berbasis web yang dirancang untuk membantu pengguna mengelola project, menetapkan goals, menyusun tugas harian, dan memantau progres pekerjaan dalam satu workspace terpadu.</p>
+        <p>Aplikasi ini menyediakan dashboard terpusat, pengelolaan project, tracking goals, manajemen tasks, serta penyimpanan data pengguna. Antarmukanya dirancang agar aktivitas dan perkembangan setiap project dapat dipantau dengan lebih terstruktur.</p>
+        <h4>Fitur utama:</h4>
+        <ul>
+          <li><strong>Dashboard produktivitas:</strong> Menampilkan ringkasan metrik kinerja, streak aktif, daftar deadline kritis, dan pemantauan tugas secara terpusat.</li>
+          <li><strong>Manajemen project dan tracking progres:</strong> Memantau tahapan deliverable, siklus pengembangan, milestone, dan progres penyelesaian inisiatif.</li>
+          <li><strong>Pengelolaan goals dan target:</strong> Membantu menetapkan sasaran strategis jangka panjang dengan breakdown milestone terukur dan tracking persentase keberhasilan.</li>
+          <li><strong>Manajemen tasks dan perencanaan aktivitas:</strong> Merencanakan alur kerja harian, filter tiket prioritas, estimasi durasi, dan checklist pekerjaan.</li>
+          <li><strong>Autentikasi pengguna dan penyimpanan data berdasarkan akun:</strong> Mendukung sinkronisasi data cloud real-time via Supabase dan persistensi mode tamu lokal.</li>
+          <li><strong>Tampilan responsif untuk desktop dan perangkat mobile:</strong> Desain antarmuka fleksibel yang nyaman diakses melalui berbagai resolusi perangkat.</li>
+        </ul>
+        <h4>Teknologi:</h4>
+        <ul>
+          <li><strong>React 19 & React Router 7:</strong> Framework aplikasi modern berbasis komponen dan navigasi SPA.</li>
+          <li><strong>Vite:</strong> Build tool dan frontend bundler berkinerja tinggi.</li>
+          <li><strong>Tailwind CSS:</strong> Utilitas styling responsif dengan Stitch design tokens.</li>
+          <li><strong>Supabase:</strong> Backend cloud database PostgreSQL, sinkronisasi data, dan autentikasi pengguna.</li>
+          <li><strong>Material Symbols:</strong> Google modern typography dan sistem ikonografi.</li>
+          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://suruwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://suruwp.vercel.app/</a>).</li>
+        </ul>
       `
     },
     'tokoroti': {
-      name: 'tokoroti.id',
-      type: 'Bakery & Toko Roti',
-      client: 'Andi Pratama',
-      projectType: 'Bakery Website',
-      surfaceArea: 'Landing Page + Catalog',
-      location: 'Surabaya, Indonesia',
-      tags: ['Bakery', 'WordPress', 'Catalog'],
-      image: 'assets/portfolio-tokoroti.png',
+      name: 'Suru Workspace',
+      type: 'Web Application / Productivity SaaS',
+      client: 'Suru Workspace',
+      projectType: 'Web Application / Productivity SaaS',
+      surfaceArea: 'Personal Productivity Workspace',
+      location: 'Cloud / Vercel',
+      tags: ['Web Application', 'Productivity SaaS', 'React 19', 'Vite', 'Supabase', 'Tailwind CSS'],
+      image: 'assets/suru-dashboard.png',
       gallery: [
-        'assets/tokoroti/tokoroti-1.png',
-        'assets/tokoroti/tokoroti-2.png',
-        'assets/tokoroti/tokoroti-3.png',
-        'assets/tokoroti/tokoroti-4.png'
+        'assets/suru-dashboard.png',
+        'assets/suru-projects.png',
+        'assets/suru-goals.png',
+        'assets/suru-tasks.png'
       ],
       description: `
-        <p>tokoroti.id adalah platform toko roti digital modern yang dirancang untuk memamerkan berbagai varian roti dan kue berkualitas tinggi serta mempermudah pemesanan online bagi pelanggan.</p>
-        <p>Dibangun di atas WordPress untuk kemudahan pengelolaan katalog produk, website ini dilengkapi dengan tampilan visual menu yang menggugah selera, sistem pemesanan langsung via WhatsApp, serta integrasi lokasi toko.</p>
-        <p>Hasilnya adalah sebuah platform bakery online yang menarik, mudah digunakan, dan efektif dalam meningkatkan penjualan serta jangkauan pelanggan.</p>
-      `
-    },
-    'pt-maju-bersama': {
-      name: 'PT Maju Bersama',
-      type: 'Company Profile',
-      client: 'Dewi Wulandari',
-      projectType: 'Company Profile',
-      surfaceArea: 'Multi-page (5 halaman)',
-      location: 'Bandung, Indonesia',
-      tags: ['Company Profile', 'Next.js'],
-      image: 'assets/portfolio-corporate.png',
-      description: `
-        <p>PT Maju Bersama memerlukan website company profile yang profesional namun tetap modern dan tidak kaku. Website ini dirancang untuk membangun kredibilitas perusahaan dan menarik calon klien serta partner bisnis.</p>
-        <p>Menggunakan Next.js untuk performa optimal dan SEO yang superior, website ini terdiri dari 5 halaman utama: Beranda, Tentang Kami, Layanan, Portfolio, dan Kontak. Setiap halaman dirancang dengan animasi scroll yang halus dan layout yang informatif.</p>
-        <p>Desain mengutamakan kesan profesional dengan warna-warna corporate yang elegan, typography yang bersih, dan penggunaan whitespace yang tepat. Hasilnya adalah sebuah digital presence yang benar-benar merepresentasikan visi dan misi perusahaan.</p>
-      `
-    },
-    'edulearn': {
-      name: 'EduLearn Academy',
-      type: 'Web Application',
-      client: 'EduLearn Team',
-      projectType: 'Platform Edukasi',
-      surfaceArea: 'Full Web Application',
-      location: 'Yogyakarta, Indonesia',
-      tags: ['Edukasi', 'Web App', 'React'],
-      image: 'assets/portfolio-education.png',
-      description: `
-        <p>EduLearn Academy adalah platform belajar online yang comprehensive, dirancang untuk memudahkan proses pembelajaran jarak jauh. Platform ini menghubungkan guru dan siswa melalui interface yang intuitif dan fitur-fitur interaktif.</p>
-        <p>Dibangun dengan React, platform ini menyediakan fitur video learning, quiz interaktif, progress tracking, sertifikat digital, dan forum diskusi. Dashboard yang informatif membantu baik pengajar maupun siswa untuk memantau perkembangan belajar.</p>
-        <p>UI/UX dirancang agar ramah pengguna dengan berbagai usia, menggunakan warna-warna cerah dan ikon-ikon yang ekspresif. Sistem gamifikasi juga diterapkan untuk meningkatkan motivasi belajar.</p>
-      `
-    },
-    'studio-kreatif': {
-      name: 'Studio Kreatif',
-      type: 'Portfolio Website',
-      client: 'Studio Kreatif Team',
-      projectType: 'Creative Agency Portfolio',
-      surfaceArea: 'Single Page Interactive',
-      location: 'Bali, Indonesia',
-      tags: ['Portfolio', 'GSAP', 'Three.js'],
-      image: 'assets/portfolio-creative.png',
-      description: `
-        <p>Studio Kreatif membutuhkan portfolio website yang mencerminkan kreativitas dan keahlian mereka sebagai creative agency. Kami merancang website yang bold, dinamis, dan penuh dengan animasi interaktif yang memukau.</p>
-        <p>Website ini menggunakan GSAP untuk animasi scroll yang smooth dan Three.js untuk elemen 3D yang immersive. Setiap section dirancang sebagai sebuah "experience" yang membawa pengunjung melalui portfolio pekerjaan mereka dengan cara yang engaging.</p>
-        <p>Hasilnya adalah sebuah website yang tidak hanya menampilkan karya Studio Kreatif, tetapi juga menjadi karya seni digital itu sendiri — memenangkan beberapa penghargaan desain web dan menarik perhatian klien-klien besar.</p>
-      `
-    },
-    'sehatplus': {
-      name: 'SehatPlus',
-      type: 'Healthcare App',
-      client: 'SehatPlus Health',
-      projectType: 'Healthcare Dashboard',
-      surfaceArea: 'Dashboard Web App',
-      location: 'Semarang, Indonesia',
-      tags: ['Healthcare', 'Dashboard', 'Vue.js'],
-      image: 'assets/portfolio-health.png',
-      description: `
-        <p>SehatPlus adalah aplikasi dashboard kesehatan yang membantu pengguna memantau kondisi kesehatan mereka secara komprehensif. Dari tracking aktivitas harian hingga riwayat medis, semuanya terintegrasi dalam satu platform yang mudah digunakan.</p>
-        <p>Dibangun dengan Vue.js, dashboard ini menyajikan data kesehatan melalui visualisasi chart dan grafik yang informatif. Fitur utama meliputi monitoring vital signs, jadwal obat, appointment booking dengan dokter, dan health tips yang dipersonalisasi.</p>
-        <p>Desain mengutamakan kejelasan informasi dengan color coding yang intuitif, layout yang clean, dan akses cepat ke fitur-fitur penting. Aksesibilitas juga menjadi prioritas agar dapat digunakan oleh berbagai kalangan pengguna.</p>
+        <p>Suru Workspace adalah aplikasi produktivitas berbasis web yang dirancang untuk membantu pengguna mengelola project, menetapkan goals, menyusun tugas harian, dan memantau progres pekerjaan dalam satu workspace terpadu.</p>
+        <p>Aplikasi ini menyediakan dashboard terpusat, pengelolaan project, tracking goals, manajemen tasks, serta penyimpanan data pengguna. Antarmukanya dirancang agar aktivitas dan perkembangan setiap project dapat dipantau dengan lebih terstruktur.</p>
+        <h4>Fitur utama:</h4>
+        <ul>
+          <li><strong>Dashboard produktivitas:</strong> Menampilkan ringkasan metrik kinerja, streak aktif, daftar deadline kritis, dan pemantauan tugas secara terpusat.</li>
+          <li><strong>Manajemen project dan tracking progres:</strong> Memantau tahapan deliverable, siklus pengembangan, milestone, dan progres penyelesaian inisiatif.</li>
+          <li><strong>Pengelolaan goals dan target:</strong> Membantu menetapkan sasaran strategis jangka panjang dengan breakdown milestone terukur dan tracking persentase keberhasilan.</li>
+          <li><strong>Manajemen tasks dan perencanaan aktivitas:</strong> Merencanakan alur kerja harian, filter tiket prioritas, estimasi durasi, dan checklist pekerjaan.</li>
+          <li><strong>Autentikasi pengguna dan penyimpanan data berdasarkan akun:</strong> Mendukung sinkronisasi data cloud real-time via Supabase dan persistensi mode tamu lokal.</li>
+          <li><strong>Tampilan responsif untuk desktop dan perangkat mobile:</strong> Desain antarmuka fleksibel yang nyaman diakses melalui berbagai resolusi perangkat.</li>
+        </ul>
+        <h4>Teknologi:</h4>
+        <ul>
+          <li><strong>React 19 & React Router 7:</strong> Framework aplikasi modern berbasis komponen dan navigasi SPA.</li>
+          <li><strong>Vite:</strong> Build tool dan frontend bundler berkinerja tinggi.</li>
+          <li><strong>Tailwind CSS:</strong> Utilitas styling responsif dengan Stitch design tokens.</li>
+          <li><strong>Supabase:</strong> Backend cloud database PostgreSQL, sinkronisasi data, dan autentikasi pengguna.</li>
+          <li><strong>Material Symbols:</strong> Google modern typography dan sistem ikonografi.</li>
+          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://suruwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://suruwp.vercel.app/</a>).</li>
+        </ul>
       `
     }
   };

@@ -464,6 +464,31 @@
   margin-bottom: 16px;
 }
 
+.project-description-text h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.project-description-text ul {
+  margin: 0 0 16px 20px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.project-description-text li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.project-description-text strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
 .project-description-text p:last-child {
   margin-bottom: 0;
 }

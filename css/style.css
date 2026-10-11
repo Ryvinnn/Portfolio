@@ -1166,9 +1166,8 @@ section {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 900px;
+  grid-template-columns: 1fr;
+  max-width: 680px;
   margin: 0 auto;
 }
 
@@ -1871,7 +1870,8 @@ section {
   }
 
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 600px;
   }
 
   .testimonials-grid {
