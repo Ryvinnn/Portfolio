@@ -347,6 +347,12 @@
   align-items: flex-start;
 }
 
+/* Project Info Column */
+.project-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Project Info Card */
 .project-info {
   background: var(--white);
