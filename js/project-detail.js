@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'suru-workspace': {
       name: 'Suru Workspace',
       type: 'Web Application / Productivity SaaS',
-      client: 'Suru Workspace',
+      client: 'Personal Project',
       projectType: 'Web Application / Productivity SaaS',
       surfaceArea: 'Personal Productivity Workspace',
       location: 'Cloud / Vercel',
