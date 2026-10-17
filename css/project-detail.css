@@ -523,6 +523,17 @@
   color: var(--white);
 }
 
+.project-detail-tag.tag-unfinished {
+  background: rgba(235, 126, 43, 0.12);
+  color: #EB7E2B;
+  border: 1px solid rgba(235, 126, 43, 0.35);
+}
+
+.project-detail-tag.tag-unfinished:hover {
+  background: #EB7E2B;
+  color: var(--white);
+}
+
 /* ---------- Share Section ---------- */
 .project-share {
   text-align: center;

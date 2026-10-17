@@ -45,79 +45,48 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
       `
     },
-    'travelmalang': {
-      name: 'Suru Workspace',
-      type: 'Web Application / Productivity SaaS',
-      client: 'Suru Workspace',
-      projectType: 'Web Application / Productivity SaaS',
-      surfaceArea: 'Personal Productivity Workspace',
+    'kelaskit': {
+      name: 'KelasKit (Unfinished)',
+      type: 'Web Application / Student Productivity (Unfinished)',
+      client: 'Student Productivity Platform',
+      projectType: 'Web Application / Student Productivity (Unfinished)',
+      surfaceArea: 'Student Productivity Workspace',
       location: 'Cloud / Vercel',
-      tags: ['Web Application', 'Productivity SaaS', 'React 19', 'Vite', 'Supabase', 'Tailwind CSS'],
-      image: 'assets/suru-dashboard.png',
+      tags: ['Web Application', 'Student Productivity', 'React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Vercel', 'Unfinished'],
+      image: 'assets/kelas-kit-dashboard.png',
       gallery: [
-        'assets/suru-dashboard.png',
-        'assets/suru-projects.png',
-        'assets/suru-goals.png',
-        'assets/suru-tasks.png'
+        'assets/kelas-kit-dashboard.png',
+        'assets/kelas-kit-tasks.png',
+        'assets/kelas-kit-notes.png',
+        'assets/kelas-kit-schedule.png'
       ],
       description: `
-        <p>Suru Workspace adalah aplikasi produktivitas berbasis web yang dirancang untuk membantu pengguna mengelola project, menetapkan goals, menyusun tugas harian, dan memantau progres pekerjaan dalam satu workspace terpadu.</p>
-        <p>Aplikasi ini menyediakan dashboard terpusat, pengelolaan project, tracking goals, manajemen tasks, serta penyimpanan data pengguna. Antarmukanya dirancang agar aktivitas dan perkembangan setiap project dapat dipantau dengan lebih terstruktur.</p>
+        <div style="background: rgba(235, 126, 43, 0.08); border-left: 4px solid #eb7e2b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px;">
+          <strong style="color: #eb7e2b; display: block; font-size: 0.95rem; margin-bottom: 4px;">⚠️ Catatan Status: Unfinished (Dalam Tahap Pengembangan)</strong>
+          <p style="margin: 0; font-size: 0.9rem; color: #4A4A4A; line-height: 1.5;">Proyek KelasKit saat ini masih dalam tahap pengerjaan aktif (work-in-progress). Fitur, alur navigasi, dan integrasi sedang dalam proses penyempurnaan berkala.</p>
+        </div>
+        <p>KelasKit adalah aplikasi web yang dirancang untuk membantu pelajar mengelola aktivitas akademik dalam satu tempat. Aplikasi ini menggabungkan pengelolaan tugas, pencatatan materi, penjadwalan, serta dukungan AI untuk membantu aktivitas belajar menjadi lebih terorganisir.</p>
+        <p>Dengan antarmuka minimalis dan modern, KelasKit dirancang agar pelajar dapat mengatur tugas, menyimpan catatan, melihat jadwal, dan mengelola kebutuhan belajar melalui satu workspace yang praktis.</p>
         <h4>Fitur utama:</h4>
         <ul>
-          <li><strong>Dashboard produktivitas:</strong> Menampilkan ringkasan metrik kinerja, streak aktif, daftar deadline kritis, dan pemantauan tugas secara terpusat.</li>
-          <li><strong>Manajemen project dan tracking progres:</strong> Memantau tahapan deliverable, siklus pengembangan, milestone, dan progres penyelesaian inisiatif.</li>
-          <li><strong>Pengelolaan goals dan target:</strong> Membantu menetapkan sasaran strategis jangka panjang dengan breakdown milestone terukur dan tracking persentase keberhasilan.</li>
-          <li><strong>Manajemen tasks dan perencanaan aktivitas:</strong> Merencanakan alur kerja harian, filter tiket prioritas, estimasi durasi, dan checklist pekerjaan.</li>
-          <li><strong>Autentikasi pengguna dan penyimpanan data berdasarkan akun:</strong> Mendukung sinkronisasi data cloud real-time via Supabase dan persistensi mode tamu lokal.</li>
-          <li><strong>Tampilan responsif untuk desktop dan perangkat mobile:</strong> Desain antarmuka fleksibel yang nyaman diakses melalui berbagai resolusi perangkat.</li>
+          <li><strong>Dashboard aktivitas belajar:</strong> Menampilkan ringkasan progres belajar, streak harian, daftar tugas mendesak, dan navigasi belajar terpadu.</li>
+          <li><strong>Manajemen tugas dan tenggat waktu:</strong> Mengelola PR dan proyek dengan filter mata pelajaran, tingkat prioritas, tenggat waktu, dan template tugas cepat.</li>
+          <li><strong>Catatan digital dengan editor teks:</strong> Menyimpan rangkuman materi dengan opsi format teks terstruktur, template metode Cornell, rumus aljabar, dan tag pencarian.</li>
+          <li><strong>Jadwal kegiatan akademik:</strong> Mengatur jadwal pelajaran mingguan dan agenda belajar harian secara rapi dengan sinkronisasi semester.</li>
+          <li><strong>Integrasi AI untuk membantu aktivitas belajar:</strong> Fitur asisten cerdas untuk membantu menjelaskan konsep pelajaran, membuat kuis kilat, dan merangkum poin materi.</li>
+          <li><strong>Pengaturan akun dan preferensi aplikasi:</strong> Mengatur profil siswa, preferensi bahasa (Indonesia/Inggris), serta dukungan mode tamu (guest mode) lokal.</li>
+          <li><strong>Desain responsif untuk desktop dan perangkat mobile:</strong> Tampilan antarmuka adaptif yang optimal diakses baik dari laptop, tablet, maupun smartphone.</li>
         </ul>
         <h4>Teknologi:</h4>
         <ul>
-          <li><strong>React 19 & React Router 7:</strong> Framework aplikasi modern berbasis komponen dan navigasi SPA.</li>
-          <li><strong>Vite:</strong> Build tool dan frontend bundler berkinerja tinggi.</li>
-          <li><strong>Tailwind CSS:</strong> Utilitas styling responsif dengan Stitch design tokens.</li>
-          <li><strong>Supabase:</strong> Backend cloud database PostgreSQL, sinkronisasi data, dan autentikasi pengguna.</li>
-          <li><strong>Material Symbols:</strong> Google modern typography dan sistem ikonografi.</li>
-          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://suruwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://suruwp.vercel.app/</a>).</li>
-        </ul>
-      `
-    },
-    'tokoroti': {
-      name: 'Suru Workspace',
-      type: 'Web Application / Productivity SaaS',
-      client: 'Suru Workspace',
-      projectType: 'Web Application / Productivity SaaS',
-      surfaceArea: 'Personal Productivity Workspace',
-      location: 'Cloud / Vercel',
-      tags: ['Web Application', 'Productivity SaaS', 'React 19', 'Vite', 'Supabase', 'Tailwind CSS'],
-      image: 'assets/suru-dashboard.png',
-      gallery: [
-        'assets/suru-dashboard.png',
-        'assets/suru-projects.png',
-        'assets/suru-goals.png',
-        'assets/suru-tasks.png'
-      ],
-      description: `
-        <p>Suru Workspace adalah aplikasi produktivitas berbasis web yang dirancang untuk membantu pengguna mengelola project, menetapkan goals, menyusun tugas harian, dan memantau progres pekerjaan dalam satu workspace terpadu.</p>
-        <p>Aplikasi ini menyediakan dashboard terpusat, pengelolaan project, tracking goals, manajemen tasks, serta penyimpanan data pengguna. Antarmukanya dirancang agar aktivitas dan perkembangan setiap project dapat dipantau dengan lebih terstruktur.</p>
-        <h4>Fitur utama:</h4>
-        <ul>
-          <li><strong>Dashboard produktivitas:</strong> Menampilkan ringkasan metrik kinerja, streak aktif, daftar deadline kritis, dan pemantauan tugas secara terpusat.</li>
-          <li><strong>Manajemen project dan tracking progres:</strong> Memantau tahapan deliverable, siklus pengembangan, milestone, dan progres penyelesaian inisiatif.</li>
-          <li><strong>Pengelolaan goals dan target:</strong> Membantu menetapkan sasaran strategis jangka panjang dengan breakdown milestone terukur dan tracking persentase keberhasilan.</li>
-          <li><strong>Manajemen tasks dan perencanaan aktivitas:</strong> Merencanakan alur kerja harian, filter tiket prioritas, estimasi durasi, dan checklist pekerjaan.</li>
-          <li><strong>Autentikasi pengguna dan penyimpanan data berdasarkan akun:</strong> Mendukung sinkronisasi data cloud real-time via Supabase dan persistensi mode tamu lokal.</li>
-          <li><strong>Tampilan responsif untuk desktop dan perangkat mobile:</strong> Desain antarmuka fleksibel yang nyaman diakses melalui berbagai resolusi perangkat.</li>
-        </ul>
-        <h4>Teknologi:</h4>
-        <ul>
-          <li><strong>React 19 & React Router 7:</strong> Framework aplikasi modern berbasis komponen dan navigasi SPA.</li>
-          <li><strong>Vite:</strong> Build tool dan frontend bundler berkinerja tinggi.</li>
-          <li><strong>Tailwind CSS:</strong> Utilitas styling responsif dengan Stitch design tokens.</li>
-          <li><strong>Supabase:</strong> Backend cloud database PostgreSQL, sinkronisasi data, dan autentikasi pengguna.</li>
-          <li><strong>Material Symbols:</strong> Google modern typography dan sistem ikonografi.</li>
-          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://suruwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://suruwp.vercel.app/</a>).</li>
+          <li><strong>React 19 & React Router 7:</strong> Framework frontend modern berbasis komponen dengan navigasi Single Page Application.</li>
+          <li><strong>TypeScript:</strong> Menjamin keandalan logika aplikasi dengan pengetikan statis yang kuat dan terstruktur.</li>
+          <li><strong>Vite:</strong> Build tool dan frontend bundler berkinerja tinggi untuk pemuatan halaman yang instan.</li>
+          <li><strong>Tailwind CSS v4:</strong> Framework utilitas styling modern dengan performa kompilasi optimal.</li>
+          <li><strong>Google Fonts (Plus Jakarta Sans):</strong> Tipografi bersih dan ergonomis untuk kenyamanan membaca materi belajar.</li>
+          <li><strong>Material Symbols:</strong> Sistem ikonografi antarmuka yang konsisten dan intuitif.</li>
+          <li><strong>Client-Side Storage (LocalStorage):</strong> Manajemen persistensi data lokal yang aman untuk mode tamu dan sesi belajar tanpa ketergantungan server kompleks.</li>
+          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://kelaskitwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://kelaskitwp.vercel.app/</a>).</li>
         </ul>
       `
     }
@@ -196,6 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
     data.tags.forEach(tag => {
       const span = document.createElement('span');
       span.className = 'project-detail-tag';
+      if (tag.toLowerCase().includes('unfinished')) {
+        span.classList.add('tag-unfinished');
+      }
       span.textContent = tag;
       tagsContainer.appendChild(span);
     });
