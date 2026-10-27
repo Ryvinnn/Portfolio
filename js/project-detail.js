@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectsData = {
     'suru-workspace': {
       name: 'Suru Workspace',
+      url: 'https://suruwp.vercel.app/',
       type: 'Web Application / Productivity SaaS',
       client: 'Personal Project',
       projectType: 'Web Application / Productivity SaaS',
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'kelaskit': {
       name: 'KelasKit (Unfinished)',
+      url: 'https://kelaskitwp.vercel.app/',
       type: 'Web Application / Student Productivity (Unfinished)',
       client: 'Student Productivity Platform',
       projectType: 'Web Application / Student Productivity (Unfinished)',
@@ -89,6 +91,46 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://kelaskitwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://kelaskitwp.vercel.app/</a>).</li>
         </ul>
       `
+    },
+    'tabinote': {
+      name: 'Tabinote',
+      url: 'https://tabinotee.vercel.app/',
+      type: 'Japan Travel Guide / Travel & Tourism Website',
+      client: 'Editorial Travel Publication',
+      projectType: 'Japan Travel Guide / Travel & Tourism Website',
+      surfaceArea: 'Japan Travel Guide Platform',
+      location: 'Cloud / Vercel',
+      tags: ['Web Design', 'Travel Guide', 'Japanese Editorial', 'Next.js', 'React', 'Tailwind CSS', 'Vercel'],
+      image: 'assets/tabinote-home.png',
+      gallery: [
+        'assets/tabinote-home.png',
+        'assets/tabinote-destinations.png',
+        'assets/tabinote-seasons.png',
+        'assets/tabinote-journal.png'
+      ],
+      description: `
+        <p>Tabinote adalah website panduan perjalanan Jepang yang mengajak pengguna menjelajahi keindahan, budaya, dan destinasi Jepang melalui pengalaman visual yang estetik dan informatif.</p>
+        <p>Mengusung pendekatan Japanese Editorial dan cinematic visual storytelling, Tabinote menyajikan inspirasi destinasi berdasarkan wilayah dan musim, serta jurnal perjalanan yang membantu pengguna mengenal sisi Jepang yang lebih autentik.</p>
+        <p>Website ini dirancang untuk menghadirkan pengalaman eksplorasi yang nyaman dengan fotografi destinasi, tipografi editorial, dan tata letak yang terinspirasi oleh keindahan serta ketenangan Jepang.</p>
+        <h4>Fitur utama:</h4>
+        <ul>
+          <li><strong>Visual storytelling & editorial landing hero:</strong> Tampilan beranda sinematik yang mengangkat tema slow travel dengan fotografi lanskap Jepang resolusi tinggi dan tipografi editorial.</li>
+          <li><strong>Warta pilihan destinasi:</strong> Kurasi destinasi autentik seperti Shirakawa-go di Gifu, Lembah Alpin Kamikochi di Nagano, Kampung Nelayan Ine no Funaya di Kyoto, dan pesisir Otaru & Yoichi di Hokkaido.</li>
+          <li><strong>Panduan 72 musim mikro (七十二候):</strong> Eksplorasi keindahan Jepang berdasarkan siklus empat musim (Haru, Natsu, Aki, Fuyu) yang menyajikan nuansa lanskap dan aktivitas khas setiap musim.</li>
+          <li><strong>Jurnal slow travel & catatan lapangan editor:</strong> Artikel dan esai perjalanan mendalam mengenai jalur kereta lokal, kehidupan pedesaan, suaka pesisir San'in, dan kekayaan budaya tersembunyi.</li>
+          <li><strong>Tipografi editorial Jepang & aksen kanji:</strong> Perpaduan harmonis antara tipografi serif editorial, aksen kanji tradisional, dan tata letak wabi-sabi yang tenang dan anggun.</li>
+          <li><strong>Desain responsif & navigasi terintegrasi:</strong> Navigasi modern dengan efek backdrop blur, transisi halus, dan tata letak adaptif yang optimal di desktop maupun perangkat mobile.</li>
+        </ul>
+        <h4>Teknologi:</h4>
+        <ul>
+          <li><strong>Next.js (App Router):</strong> Framework full-stack React modern dengan performa tinggi dan rendering halaman yang cepat.</li>
+          <li><strong>React:</strong> Library antarmuka berbasis komponen untuk pengalaman penjelajahan yang interaktif dan dinamis.</li>
+          <li><strong>Tailwind CSS:</strong> Framework utilitas styling modern untuk tata letak editorial responsif dan palet warna wabi-sabi.</li>
+          <li><strong>Material Symbols:</strong> Sistem ikonografi Google yang bersih dan konsisten untuk navigasi antarmuka.</li>
+          <li><strong>Editorial Web Fonts:</strong> Tipografi kurasi elegan untuk kenyamanan membaca esai dan panduan perjalanan.</li>
+          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://tabinotee.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://tabinotee.vercel.app/</a>).</li>
+        </ul>
+      `
     }
   };
 
@@ -121,8 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!data) return;
 
     // Populate hero
-    heroTitle.textContent = 'PROJECT';
-    heroSubtitle.textContent = data.name;
+    heroTitle.textContent = data.name;
+    if (data.url) {
+      heroSubtitle.innerHTML = `<a href="${data.url}" target="_blank" rel="noopener noreferrer">${data.url}</a>`;
+    } else {
+      heroSubtitle.textContent = '';
+    }
 
     // Populate main image
     mainImage.src = data.image;

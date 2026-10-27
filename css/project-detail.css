@@ -201,6 +201,20 @@
   opacity: 0.9;
 }
 
+.project-hero-subtitle a {
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: var(--transition);
+  word-break: break-all;
+}
+
+.project-hero-subtitle a:hover {
+  color: var(--white);
+  opacity: 1;
+  text-decoration: underline;
+}
+
 /* Decorative hanging lamps (like reference) */
 .project-hero-decor {
   position: absolute;
