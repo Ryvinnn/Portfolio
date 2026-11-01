@@ -46,52 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
       `
     },
-    'kelaskit': {
-      name: 'KelasKit (Unfinished)',
-      url: 'https://kelaskitwp.vercel.app/',
-      type: 'Web Application / Student Productivity (Unfinished)',
-      client: 'Student Productivity Platform',
-      projectType: 'Web Application / Student Productivity (Unfinished)',
-      surfaceArea: 'Student Productivity Workspace',
-      location: 'Cloud / Vercel',
-      tags: ['Web Application', 'Student Productivity', 'React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Vercel', 'Unfinished'],
-      image: 'assets/kelas-kit-dashboard.webp',
-      gallery: [
-        { full: 'assets/kelas-kit-dashboard.webp', thumb: 'assets/kelas-kit-dashboard-thumb.webp', alt: 'KelasKit — Dashboard' },
-        { full: 'assets/kelas-kit-tasks.webp', thumb: 'assets/kelas-kit-tasks-thumb.webp', alt: 'KelasKit — Tasks' },
-        { full: 'assets/kelas-kit-notes.webp', thumb: 'assets/kelas-kit-notes-thumb.webp', alt: 'KelasKit — Notes' },
-        { full: 'assets/kelas-kit-schedule.webp', thumb: 'assets/kelas-kit-schedule-thumb.webp', alt: 'KelasKit — Schedule' }
-      ],
-      description: `
-        <div style="background: rgba(235, 126, 43, 0.08); border-left: 4px solid #eb7e2b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px;">
-          <strong style="color: #eb7e2b; display: block; font-size: 0.95rem; margin-bottom: 4px;">⚠️ Catatan Status: Unfinished (Dalam Tahap Pengembangan)</strong>
-          <p style="margin: 0; font-size: 0.9rem; color: #4A4A4A; line-height: 1.5;">Proyek KelasKit saat ini masih dalam tahap pengerjaan aktif (work-in-progress). Fitur, alur navigasi, dan integrasi sedang dalam proses penyempurnaan berkala.</p>
-        </div>
-        <p>KelasKit adalah aplikasi web yang dirancang untuk membantu pelajar mengelola aktivitas akademik dalam satu tempat. Aplikasi ini menggabungkan pengelolaan tugas, pencatatan materi, penjadwalan, serta dukungan AI untuk membantu aktivitas belajar menjadi lebih terorganisir.</p>
-        <p>Dengan antarmuka minimalis dan modern, KelasKit dirancang agar pelajar dapat mengatur tugas, menyimpan catatan, melihat jadwal, dan mengelola kebutuhan belajar melalui satu workspace yang praktis.</p>
-        <h4>Fitur utama:</h4>
-        <ul>
-          <li><strong>Dashboard aktivitas belajar:</strong> Menampilkan ringkasan progres belajar, streak harian, daftar tugas mendesak, dan navigasi belajar terpadu.</li>
-          <li><strong>Manajemen tugas dan tenggat waktu:</strong> Mengelola PR dan proyek dengan filter mata pelajaran, tingkat prioritas, tenggat waktu, dan template tugas cepat.</li>
-          <li><strong>Catatan digital dengan editor teks:</strong> Menyimpan rangkuman materi dengan opsi format teks terstruktur, template metode Cornell, rumus aljabar, dan tag pencarian.</li>
-          <li><strong>Jadwal kegiatan akademik:</strong> Mengatur jadwal pelajaran mingguan dan agenda belajar harian secara rapi dengan sinkronisasi semester.</li>
-          <li><strong>Integrasi AI untuk membantu aktivitas belajar:</strong> Fitur asisten cerdas untuk membantu menjelaskan konsep pelajaran, membuat kuis kilat, dan merangkum poin materi.</li>
-          <li><strong>Pengaturan akun dan preferensi aplikasi:</strong> Mengatur profil siswa, preferensi bahasa (Indonesia/Inggris), serta dukungan mode tamu (guest mode) lokal.</li>
-          <li><strong>Desain responsif untuk desktop dan perangkat mobile:</strong> Tampilan antarmuka adaptif yang optimal diakses baik dari laptop, tablet, maupun smartphone.</li>
-        </ul>
-        <h4>Teknologi:</h4>
-        <ul>
-          <li><strong>React 19 & React Router 7:</strong> Framework frontend modern berbasis komponen dengan navigasi Single Page Application.</li>
-          <li><strong>TypeScript:</strong> Menjamin keandalan logika aplikasi dengan pengetikan statis yang kuat dan terstruktur.</li>
-          <li><strong>Vite:</strong> Build tool dan frontend bundler berkinerja tinggi untuk pemuatan halaman yang instan.</li>
-          <li><strong>Tailwind CSS v4:</strong> Framework utilitas styling modern dengan performa kompilasi optimal.</li>
-          <li><strong>Google Fonts (Plus Jakarta Sans):</strong> Tipografi bersih dan ergonomis untuk kenyamanan membaca materi belajar.</li>
-          <li><strong>Material Symbols:</strong> Sistem ikonografi antarmuka yang konsisten dan intuitif.</li>
-          <li><strong>Client-Side Storage (LocalStorage):</strong> Manajemen persistensi data lokal yang aman untuk mode tamu dan sesi belajar tanpa ketergantungan server kompleks.</li>
-          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://kelaskitwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://kelaskitwp.vercel.app/</a>).</li>
-        </ul>
-      `
-    },
     'tabinote': {
       name: 'Tabinote',
       url: 'https://tabinotee.vercel.app/',

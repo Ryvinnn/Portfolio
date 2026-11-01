@@ -1166,9 +1166,9 @@ section {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1200px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -1904,13 +1904,7 @@ section {
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 800px;
-  }
-
-  .portfolio-grid .portfolio-card:last-child {
-    grid-column: 1 / -1;
-    max-width: 400px;
-    justify-self: center;
-    width: 100%;
+    gap: 24px;
   }
 
   .testimonials-grid {
@@ -2017,10 +2011,8 @@ section {
 
   .portfolio-grid {
     grid-template-columns: 1fr;
-  }
-
-  .portfolio-grid .portfolio-card:last-child {
-    max-width: none;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .portfolio-overlay {

@@ -9,12 +9,6 @@ const projectImages = [
   { file: 'assets/suru-goals.png', name: 'suru-goals', isCard: false },
   { file: 'assets/suru-tasks.png', name: 'suru-tasks', isCard: false },
 
-  // KelasKit
-  { file: 'assets/kelas-kit-dashboard.png', name: 'kelas-kit-dashboard', isCard: true },
-  { file: 'assets/kelas-kit-tasks.png', name: 'kelas-kit-tasks', isCard: false },
-  { file: 'assets/kelas-kit-notes.png', name: 'kelas-kit-notes', isCard: false },
-  { file: 'assets/kelas-kit-schedule.png', name: 'kelas-kit-schedule', isCard: false },
-
   // Tabinote
   { file: 'assets/tabinote-home.png', name: 'tabinote-home', isCard: true },
   { file: 'assets/tabinote-destinations.png', name: 'tabinote-destinations', isCard: false },
@@ -35,7 +29,7 @@ async function run() {
     const image = sharp(img.file);
     const metadata = await image.metadata();
 
-    // 1. Full/Modal image: max 1600px width (KelasKit was 2880px!)
+    // 1. Full/Modal image: max 1600px width
     const targetWidth = Math.min(metadata.width, 1600);
 
     // Full WebP
