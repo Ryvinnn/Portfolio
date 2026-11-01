@@ -92,28 +92,38 @@
   }
 
   // ==========================================
-  //   RESIZE
+  //   RESIZE & RECT CACHING
   // ==========================================
+
+  let canvasRect = null;
+
+  function updateCanvasRect() {
+    canvasRect = canvas.getBoundingClientRect();
+  }
 
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const rect = canvas.getBoundingClientRect();
-    width = rect.width;
-    height = rect.height;
+    updateCanvasRect();
+    width = canvasRect.width;
+    height = canvasRect.height;
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   // ==========================================
-  //   MOUSE TRACKING
+  //   MOUSE TRACKING (Zero Layout Thrashing)
   // ==========================================
 
   canvas.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    rawMouseX = e.clientX - rect.left;
-    rawMouseY = e.clientY - rect.top;
+    if (!canvasRect) updateCanvasRect();
+    rawMouseX = e.clientX - canvasRect.left;
+    rawMouseY = e.clientY - canvasRect.top;
     mouseActive = true;
+  }, { passive: true });
+
+  window.addEventListener('scroll', () => {
+    canvasRect = null;
   }, { passive: true });
 
   canvas.addEventListener('mouseleave', () => {

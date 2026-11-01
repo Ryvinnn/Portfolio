@@ -12,17 +12,21 @@
     <title>AlvinCreate — Jasa Pembuatan Website Profesional</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon-192.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"></noscript>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/project-detail.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preload" href="css/project-detail.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/project-detail.min.css"></noscript>
 </head>
 
 <body>
@@ -341,8 +345,11 @@
 
             <div class="portfolio-grid">
                 <div class="portfolio-card reveal reveal-delay-1" data-project="suru-workspace">
-                    <img src="assets/suru-dashboard.png" alt="Suru Workspace — Personal Productivity Workspace"
-                        loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/suru-dashboard-card.avif 800w, assets/suru-dashboard.avif 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px">
+                        <source type="image/webp" srcset="assets/suru-dashboard-card.webp 800w, assets/suru-dashboard.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px">
+                        <img src="assets/suru-dashboard-card.png" alt="Suru Workspace — Personal Productivity Workspace" class="portfolio-img" loading="lazy" decoding="async" width="800" height="550">
+                    </picture>
                     <div class="portfolio-overlay">
                         <h3>Suru Workspace — Personal Productivity Workspace</h3>
                         <div class="portfolio-tags">
@@ -355,8 +362,11 @@
 
                 <div class="portfolio-card reveal reveal-delay-2" data-project="kelaskit">
                     <span class="portfolio-status-badge">Unfinished</span>
-                    <img src="assets/kelas-kit-dashboard.png" alt="KelasKit — Student Productivity Platform (Unfinished)"
-                        loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/kelas-kit-dashboard-card.avif 800w, assets/kelas-kit-dashboard.avif 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px">
+                        <source type="image/webp" srcset="assets/kelas-kit-dashboard-card.webp 800w, assets/kelas-kit-dashboard.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px">
+                        <img src="assets/kelas-kit-dashboard-card.png" alt="KelasKit — Student Productivity Platform (Unfinished)" class="portfolio-img" loading="lazy" decoding="async" width="800" height="550">
+                    </picture>
                     <div class="portfolio-overlay">
                         <h3>KelasKit — Student Productivity Platform</h3>
                         <div class="portfolio-tags">
@@ -369,8 +379,11 @@
                 </div>
 
                 <div class="portfolio-card reveal reveal-delay-3" data-project="tabinote">
-                    <img src="assets/tabinote-home.png" alt="Tabinote — Japan Travel Guide"
-                        loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/avif" srcset="assets/tabinote-home-card.avif 800w, assets/tabinote-home.avif 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px">
+                        <source type="image/webp" srcset="assets/tabinote-home-card.webp 800w, assets/tabinote-home.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px">
+                        <img src="assets/tabinote-home-card.png" alt="Tabinote — Japan Travel Guide" class="portfolio-img" loading="lazy" decoding="async" width="800" height="550">
+                    </picture>
                     <div class="portfolio-overlay">
                         <h3>Tabinote — Japan Travel Guide</h3>
                         <div class="portfolio-tags">
@@ -925,10 +938,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/bg-shapes.js"></script>
-    <script src="js/particle-sphere.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/project-detail.js"></script>
+    <script src="js/bg-shapes.min.js" defer></script>
+    <script src="js/particle-sphere.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
+    <script src="js/project-detail.min.js" defer></script>
 </body>
 
 </html>

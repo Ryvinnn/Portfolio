@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
       surfaceArea: 'Personal Productivity Workspace',
       location: 'Cloud / Vercel',
       tags: ['Web Application', 'Productivity SaaS', 'React 19', 'Vite', 'Supabase', 'Tailwind CSS'],
-      image: 'assets/suru-dashboard.png',
+      image: 'assets/suru-dashboard.webp',
       gallery: [
-        'assets/suru-dashboard.png',
-        'assets/suru-projects.png',
-        'assets/suru-goals.png',
-        'assets/suru-tasks.png'
+        { full: 'assets/suru-dashboard.webp', thumb: 'assets/suru-dashboard-thumb.webp', alt: 'Suru Workspace — Dashboard' },
+        { full: 'assets/suru-projects.webp', thumb: 'assets/suru-projects-thumb.webp', alt: 'Suru Workspace — Projects' },
+        { full: 'assets/suru-goals.webp', thumb: 'assets/suru-goals-thumb.webp', alt: 'Suru Workspace — Goals' },
+        { full: 'assets/suru-tasks.webp', thumb: 'assets/suru-tasks-thumb.webp', alt: 'Suru Workspace — Tasks' }
       ],
       description: `
         <p>Suru Workspace adalah aplikasi produktivitas berbasis web yang dirancang untuk membantu pengguna mengelola project, menetapkan goals, menyusun tugas harian, dan memantau progres pekerjaan dalam satu workspace terpadu.</p>
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
       surfaceArea: 'Student Productivity Workspace',
       location: 'Cloud / Vercel',
       tags: ['Web Application', 'Student Productivity', 'React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Vercel', 'Unfinished'],
-      image: 'assets/kelas-kit-dashboard.png',
+      image: 'assets/kelas-kit-dashboard.webp',
       gallery: [
-        'assets/kelas-kit-dashboard.png',
-        'assets/kelas-kit-tasks.png',
-        'assets/kelas-kit-notes.png',
-        'assets/kelas-kit-schedule.png'
+        { full: 'assets/kelas-kit-dashboard.webp', thumb: 'assets/kelas-kit-dashboard-thumb.webp', alt: 'KelasKit — Dashboard' },
+        { full: 'assets/kelas-kit-tasks.webp', thumb: 'assets/kelas-kit-tasks-thumb.webp', alt: 'KelasKit — Tasks' },
+        { full: 'assets/kelas-kit-notes.webp', thumb: 'assets/kelas-kit-notes-thumb.webp', alt: 'KelasKit — Notes' },
+        { full: 'assets/kelas-kit-schedule.webp', thumb: 'assets/kelas-kit-schedule-thumb.webp', alt: 'KelasKit — Schedule' }
       ],
       description: `
         <div style="background: rgba(235, 126, 43, 0.08); border-left: 4px solid #eb7e2b; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px;">
@@ -101,12 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
       surfaceArea: 'Japan Travel Guide Platform',
       location: 'Cloud / Vercel',
       tags: ['Web Design', 'Travel Guide', 'Japanese Editorial', 'Next.js', 'React', 'Tailwind CSS', 'Vercel'],
-      image: 'assets/tabinote-home.png',
+      image: 'assets/tabinote-home.webp',
       gallery: [
-        'assets/tabinote-home.png',
-        'assets/tabinote-destinations.png',
-        'assets/tabinote-seasons.png',
-        'assets/tabinote-journal.png'
+        { full: 'assets/tabinote-home.webp', thumb: 'assets/tabinote-home-thumb.webp', alt: 'Tabinote — Home Visual' },
+        { full: 'assets/tabinote-destinations.webp', thumb: 'assets/tabinote-destinations-thumb.webp', alt: 'Tabinote — Destinations' },
+        { full: 'assets/tabinote-seasons.webp', thumb: 'assets/tabinote-seasons-thumb.webp', alt: 'Tabinote — Seasons' },
+        { full: 'assets/tabinote-journal.webp', thumb: 'assets/tabinote-journal-thumb.webp', alt: 'Tabinote — Journal' }
       ],
       description: `
         <p>Tabinote adalah website panduan perjalanan Jepang yang mengajak pengguna menjelajahi keindahan, budaya, dan destinasi Jepang melalui pengalaman visual yang estetik dan informatif.</p>
@@ -176,11 +176,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Populate thumbnails
     thumbsContainer.innerHTML = '';
-    const galleryList = data.gallery || [data.image, data.image, data.image, data.image];
-    galleryList.forEach((imgSrc, i) => {
+    const rawGallery = data.gallery || [data.image, data.image, data.image, data.image];
+    const galleryList = rawGallery.map((item, idx) => {
+      if (typeof item === 'string') {
+        return { full: item, thumb: item, alt: `${data.name} - View ${idx + 1}` };
+      }
+      return item;
+    });
+
+    galleryList.forEach((item, i) => {
       const thumb = document.createElement('div');
       thumb.className = `project-gallery-thumb${i === 0 ? ' active' : ''}`;
-      thumb.innerHTML = `<img src="${imgSrc}" alt="${data.name} - View ${i + 1}" loading="lazy">`;
+      thumb.innerHTML = `<img src="${item.thumb}" alt="${item.alt || data.name + ' - View ' + (i + 1)}" loading="lazy" width="280" height="280">`;
       thumb.addEventListener('click', () => {
         // Switch active thumb
         thumbsContainer.querySelectorAll('.project-gallery-thumb').forEach(t => t.classList.remove('active'));
@@ -189,13 +196,26 @@ document.addEventListener('DOMContentLoaded', () => {
         mainImage.style.opacity = '0';
         mainImage.style.transform = 'scale(0.98)';
         setTimeout(() => {
-          mainImage.src = imgSrc;
+          mainImage.src = item.full;
           mainImage.style.opacity = '1';
           mainImage.style.transform = 'scale(1)';
-        }, 200);
+        }, 150);
       });
       thumbsContainer.appendChild(thumb);
     });
+
+    // Idle-preload other gallery full-res images so switching is 100% instant
+    const preloadOtherImages = () => {
+      galleryList.slice(1).forEach(item => {
+        const img = new Image();
+        img.src = item.full;
+      });
+    };
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(preloadOtherImages);
+    } else {
+      setTimeout(preloadOtherImages, 300);
+    }
 
     // Populate info
     infoClient.textContent = data.client;
