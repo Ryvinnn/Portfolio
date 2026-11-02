@@ -22,7 +22,7 @@ async function build() {
   console.log(`css/project-detail.min.css: ${(fs.statSync('css/project-detail.min.css').size / 1024).toFixed(1)} KB (orig: ${(fs.statSync('css/project-detail.css').size / 1024).toFixed(1)} KB)`);
 
   // JS
-  const jsFiles = ['bg-shapes', 'particle-sphere', 'main', 'project-detail'];
+  const jsFiles = ['bg-shapes', 'main', 'project-detail'];
   for (const name of jsFiles) {
     await esbuild.build({
       entryPoints: [`js/${name}.js`],
