@@ -1,7 +1,7 @@
 {
-  "name": "portofolio-koseidev",
+  "name": "portofolio-alvincreate",
   "version": "1.0.0",
-  "description": "Website Portofolio KōseiDev",
+  "description": "Website Portofolio AlvinCreate",
   "main": "index.html",
   "scripts": {
     "start": "npx serve -l 3000 .",
@@ -15,7 +15,7 @@
     "website",
     "landing-page"
   ],
-  "author": "KōseiDev",
+  "author": "AlvinCreate",
   "license": "ISC",
   "dependencies": {
     "esbuild": "^0.28.2"
