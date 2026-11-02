@@ -223,11 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = contactForm.querySelector('.btn');
       const originalText = btn.textContent;
       btn.textContent = '✓ Terkirim!';
-      btn.style.background = '#34D399';
+      btn.style.background = '#FFFFFF'; btn.style.color = '#000000';
 
       setTimeout(() => {
         btn.textContent = originalText;
-        btn.style.background = '';
+        btn.style.background = ''; btn.style.color = '';
       }, 3000);
     });
   }
