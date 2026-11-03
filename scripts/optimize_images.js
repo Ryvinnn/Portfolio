@@ -3,20 +3,25 @@ const fs = require('fs');
 const path = require('path');
 
 const projectImages = [
-  // Suru Workspace
-  { file: 'assets/suru-dashboard.png', name: 'suru-dashboard', isCard: true },
+  // Primary Thumbnails / Multi-Device Showcases
+  { file: 'assets/Suru.png', name: 'suru', isCard: true },
+  { file: 'assets/Tabi.png', name: 'tabi', isCard: true },
+  { file: 'assets/Lumi.png', name: 'lumi', isCard: true },
+
+  // Suru Workspace Gallery
+  { file: 'assets/suru-dashboard.png', name: 'suru-dashboard', isCard: false },
   { file: 'assets/suru-projects.png', name: 'suru-projects', isCard: false },
   { file: 'assets/suru-goals.png', name: 'suru-goals', isCard: false },
   { file: 'assets/suru-tasks.png', name: 'suru-tasks', isCard: false },
 
-  // Tabinote
-  { file: 'assets/tabinote-home.png', name: 'tabinote-home', isCard: true },
+  // Tabinote Gallery
+  { file: 'assets/tabinote-home.png', name: 'tabinote-home', isCard: false },
   { file: 'assets/tabinote-destinations.png', name: 'tabinote-destinations', isCard: false },
   { file: 'assets/tabinote-seasons.png', name: 'tabinote-seasons', isCard: false },
   { file: 'assets/tabinote-journal.png', name: 'tabinote-journal', isCard: false },
 
-  // LUMIÈRE
-  { file: 'assets/lumiere-hero.png', name: 'lumiere-hero', isCard: true },
+  // LUMIÈRE Gallery
+  { file: 'assets/lumiere-hero.png', name: 'lumiere-hero', isCard: false },
   { file: 'assets/lumiere-destinations.png', name: 'lumiere-destinations', isCard: false },
   { file: 'assets/lumiere-journal.png', name: 'lumiere-journal', isCard: false },
   { file: 'assets/lumiere-philosophy.png', name: 'lumiere-philosophy', isCard: false },
@@ -105,11 +110,23 @@ async function run() {
 
       console.log(`  -> Card WebP (800w): ${(cardWebpSize / 1024).toFixed(1)} KB`);
 
-      if (img.name === 'lumiere-hero') {
+      if (img.name === 'suru') {
+        fs.copyFileSync(cardWebp, 'assets/suru-dashboard-card.webp');
+        fs.copyFileSync(cardAvif, 'assets/suru-dashboard-card.avif');
+        fs.copyFileSync(cardPng, 'assets/suru-dashboard-card.png');
+      }
+      if (img.name === 'tabi') {
+        fs.copyFileSync(cardWebp, 'assets/tabinote-home-card.webp');
+        fs.copyFileSync(cardAvif, 'assets/tabinote-home-card.avif');
+        fs.copyFileSync(cardPng, 'assets/tabinote-home-card.png');
+      }
+      if (img.name === 'lumi') {
         fs.copyFileSync(cardWebp, 'assets/lumiere-preview.webp');
         fs.copyFileSync(cardAvif, 'assets/lumiere-preview.avif');
         fs.copyFileSync(cardPng, 'assets/lumiere-preview.png');
-        console.log('  -> Also copied to assets/lumiere-preview.webp');
+        fs.copyFileSync(cardWebp, 'assets/lumiere-hero-card.webp');
+        fs.copyFileSync(cardAvif, 'assets/lumiere-hero-card.avif');
+        fs.copyFileSync(cardPng, 'assets/lumiere-hero-card.png');
       }
     }
 

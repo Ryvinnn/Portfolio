@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
       surfaceArea: 'Personal Productivity Workspace',
       location: 'Cloud / Vercel',
       tags: ['Web Application', 'Productivity SaaS', 'React 19', 'Vite', 'Supabase', 'Tailwind CSS'],
-      image: 'assets/suru-dashboard.webp',
+      image: 'assets/suru.webp',
       gallery: [
-        { full: 'assets/suru-dashboard.webp', thumb: 'assets/suru-dashboard-thumb.webp', alt: 'Suru Workspace — Dashboard' },
+        { full: 'assets/suru.webp', thumb: 'assets/suru-thumb.webp', alt: 'Suru Workspace — Showcase' },
         { full: 'assets/suru-projects.webp', thumb: 'assets/suru-projects-thumb.webp', alt: 'Suru Workspace — Projects' },
         { full: 'assets/suru-goals.webp', thumb: 'assets/suru-goals-thumb.webp', alt: 'Suru Workspace — Goals' },
         { full: 'assets/suru-tasks.webp', thumb: 'assets/suru-tasks-thumb.webp', alt: 'Suru Workspace — Tasks' }
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
       surfaceArea: 'Japan Travel Guide Platform',
       location: 'Cloud / Vercel',
       tags: ['Web Design', 'Travel Guide', 'Japanese Editorial', 'Next.js', 'React', 'Tailwind CSS', 'Vercel'],
-      image: 'assets/tabinote-home.webp',
+      image: 'assets/tabi.webp',
       gallery: [
-        { full: 'assets/tabinote-home.webp', thumb: 'assets/tabinote-home-thumb.webp', alt: 'Tabinote — Home Visual' },
+        { full: 'assets/tabi.webp', thumb: 'assets/tabi-thumb.webp', alt: 'Tabinote — Showcase' },
         { full: 'assets/tabinote-destinations.webp', thumb: 'assets/tabinote-destinations-thumb.webp', alt: 'Tabinote — Destinations' },
         { full: 'assets/tabinote-seasons.webp', thumb: 'assets/tabinote-seasons-thumb.webp', alt: 'Tabinote — Seasons' },
         { full: 'assets/tabinote-journal.webp', thumb: 'assets/tabinote-journal-thumb.webp', alt: 'Tabinote — Journal' }
@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
       surfaceArea: 'Slow Rail Travel Journal Platform',
       location: 'Cloud / Vercel',
       tags: ['Web Design', 'Editorial Journal', 'Slow Travel', 'Rail Journeys', 'Glassmorphism', 'Vanilla JS', 'Modern CSS', 'Vercel'],
-      image: 'assets/lumiere-hero.webp',
+      image: 'assets/lumi.webp',
       gallery: [
-        { full: 'assets/lumiere-hero.webp', thumb: 'assets/lumiere-hero-thumb.webp', alt: 'LUMIÈRE — Hero Section & Panoramic Train View' },
+        { full: 'assets/lumi.webp', thumb: 'assets/lumi-thumb.webp', alt: 'LUMIÈRE — Showcase' },
         { full: 'assets/lumiere-destinations.webp', thumb: 'assets/lumiere-destinations-thumb.webp', alt: 'LUMIÈRE — Curated Destinations' },
         { full: 'assets/lumiere-journal.webp', thumb: 'assets/lumiere-journal-thumb.webp', alt: 'LUMIÈRE — Field Notes & Stories' },
         { full: 'assets/lumiere-philosophy.webp', thumb: 'assets/lumiere-philosophy-thumb.webp', alt: 'LUMIÈRE — Manifesto & Philosophy of Slow Travel' }
