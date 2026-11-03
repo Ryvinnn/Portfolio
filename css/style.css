@@ -1273,9 +1273,9 @@ section {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  max-width: 960px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1312,7 +1312,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 28px;
+  padding: 24px;
   opacity: 0;
   transition: var(--transition);
 }
@@ -1323,7 +1323,8 @@ section {
 
 .portfolio-overlay h3 {
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
   margin-bottom: 8px;
 }
 
@@ -2006,6 +2007,13 @@ section {
     gap: 24px;
   }
 
+  .portfolio-grid .portfolio-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 388px;
+    width: 100%;
+    justify-self: center;
+  }
+
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2113,6 +2121,10 @@ section {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
+  }
+
+  .portfolio-grid .portfolio-card:last-child {
+    max-width: none;
   }
 
   .portfolio-overlay {

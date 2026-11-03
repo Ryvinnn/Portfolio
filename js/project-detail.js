@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><strong>Tailwind CSS:</strong> Utilitas styling responsif dengan Stitch design tokens.</li>
           <li><strong>Supabase:</strong> Backend cloud database PostgreSQL, sinkronisasi data, dan autentikasi pengguna.</li>
           <li><strong>Material Symbols:</strong> Google modern typography dan sistem ikonografi.</li>
-          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://suruwp.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://suruwp.vercel.app/</a>).</li>
         </ul>
       `
     },
@@ -82,7 +81,45 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><strong>Tailwind CSS:</strong> Framework utilitas styling modern untuk tata letak editorial responsif dan palet warna wabi-sabi.</li>
           <li><strong>Material Symbols:</strong> Sistem ikonografi Google yang bersih dan konsisten untuk navigasi antarmuka.</li>
           <li><strong>Editorial Web Fonts:</strong> Tipografi kurasi elegan untuk kenyamanan membaca esai dan panduan perjalanan.</li>
-          <li><strong>Vercel:</strong> Deployment cloud platform (<a href="https://tabinotee.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://tabinotee.vercel.app/</a>).</li>
+        </ul>
+      `
+    },
+    'lumiere': {
+      name: 'LUMIÈRE',
+      url: 'https://lumierebyac.vercel.app/',
+      type: 'Editorial Rail Travel Publication / Slow Travel Platform',
+      client: 'Editorial Travel Publication',
+      projectType: 'Editorial Rail Travel Publication / Slow Travel Platform',
+      surfaceArea: 'Slow Rail Travel Journal Platform',
+      location: 'Cloud / Vercel',
+      tags: ['Web Design', 'Editorial Journal', 'Slow Travel', 'Rail Journeys', 'Glassmorphism', 'Vanilla JS', 'Modern CSS', 'Vercel'],
+      image: 'assets/lumiere-hero.webp',
+      gallery: [
+        { full: 'assets/lumiere-hero.webp', thumb: 'assets/lumiere-hero-thumb.webp', alt: 'LUMIÈRE — Hero Section & Panoramic Train View' },
+        { full: 'assets/lumiere-destinations.webp', thumb: 'assets/lumiere-destinations-thumb.webp', alt: 'LUMIÈRE — Curated Destinations' },
+        { full: 'assets/lumiere-journal.webp', thumb: 'assets/lumiere-journal-thumb.webp', alt: 'LUMIÈRE — Field Notes & Stories' },
+        { full: 'assets/lumiere-philosophy.webp', thumb: 'assets/lumiere-philosophy-thumb.webp', alt: 'LUMIÈRE — Manifesto & Philosophy of Slow Travel' }
+      ],
+      description: `
+        <p>LUMIÈRE adalah website publikasi editorial dan jurnal perjalanan kereta api (rail travel journal) yang mengusung filosofi slow travel. Website ini dirancang untuk merayakan pengalaman menjelajahi dunia melalui lanskap rel kereta yang memukau, stasiun-stasiun sunyi, dan rute perjalanan legendaris di seluruh Eropa.</p>
+        <p>Menghadirkan estetika visual cinematic glassmorphism dengan tipografi editorial Playfair Display dan Inter, LUMIÈRE memadukan fotografi lanskap resolusi tinggi dengan narasi perjalanan mendalam. Website ini mengajak pembaca melambat, menikmati setiap detik perjalanan dari balik jendela gerbong, serta menemukan keindahan di rute-rute yang jarang dilalui.</p>
+        <p>Pengunjung dapat menjelajahi kurasi destinasi terpilih, membaca catatan lapangan (field notes), serta berlangganan buletin berkala untuk mendapatkan warta perjalanan musiman langsung ke kotak masuk.</p>
+        <h4>Fitur utama:</h4>
+        <ul>
+          <li><strong>Cinematic Hero Viewport & Atmosphere:</strong> Pengalaman beranda sinematik interaktif berbingkai jendela kompartemen kereta vintage dengan pencahayaan dinamis, sunbeam rays, dan efek soft fog mist.</li>
+          <li><strong>Frosted Liquid-Glass Navigation:</strong> Navigasi pill mengambang dengan efek backdrop blur mutakhir dan transisi interaktif yang halus di seluruh halaman.</li>
+          <li><strong>Warta & Ekspedisi Destinasi Terpilih:</strong> Kurasi rute perjalanan kereta eksklusif melintasi Pegunungan Alpen Swiss, perbukitan Tuscany di Italia, dan lanskap dramatis Scottish Highlands.</li>
+          <li><strong>Jurnal & Catatan Lapangan (Field Notes):</strong> Kumpulan esai dan cerita naratif seputar kenyamanan kereta malam (overnight trains), pagi hening di pegunungan, serta filosofi slow travel.</li>
+          <li><strong>Postal & Digital Dispatch Waitlist:</strong> Sistem formulir berlangganan buletin berkala interaktif dengan umpan balik visual instan untuk dispatch musiman.</li>
+          <li><strong>Tipografi Editorial & Tata Letak Responsif:</strong> Harmonisasi tipografi serif klasik dan sans modern yang dioptimalkan untuk kenyamanan membaca di desktop, tablet, maupun smartphone.</li>
+        </ul>
+        <h4>Teknologi:</h4>
+        <ul>
+          <li><strong>Semantic HTML5:</strong> Struktur dokumen modern dengan markup semantik, aksesibilitas tinggi, dan integrasi metadata SEO.</li>
+          <li><strong>Modern CSS3:</strong> Glassmorphism (backdrop-filter blur), CSS Grid, Flexbox, custom properties, dan efek transisi sinematik.</li>
+          <li><strong>Vanilla JavaScript (ES6+):</strong> Logika interaktif nav toggle, scroll reveal animations, dan penanganan formulir interaktif tanpa framework berat.</li>
+          <li><strong>Google Fonts (Playfair Display & Inter):</strong> Paduan tipografi serif editorial premium dan sans modern berketerbacaan optimal.</li>
+          <li><strong>High-Performance WebP Assets:</strong> Optimasi gambar adaptif multi-resolusi untuk waktu muat cepat dan performa prima.</li>
         </ul>
       `
     }

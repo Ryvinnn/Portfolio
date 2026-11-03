@@ -14,6 +14,12 @@ const projectImages = [
   { file: 'assets/tabinote-destinations.png', name: 'tabinote-destinations', isCard: false },
   { file: 'assets/tabinote-seasons.png', name: 'tabinote-seasons', isCard: false },
   { file: 'assets/tabinote-journal.png', name: 'tabinote-journal', isCard: false },
+
+  // LUMIÈRE
+  { file: 'assets/lumiere-hero.png', name: 'lumiere-hero', isCard: true },
+  { file: 'assets/lumiere-destinations.png', name: 'lumiere-destinations', isCard: false },
+  { file: 'assets/lumiere-journal.png', name: 'lumiere-journal', isCard: false },
+  { file: 'assets/lumiere-philosophy.png', name: 'lumiere-philosophy', isCard: false },
 ];
 
 async function run() {
@@ -98,6 +104,13 @@ async function run() {
         .toFile(cardPng);
 
       console.log(`  -> Card WebP (800w): ${(cardWebpSize / 1024).toFixed(1)} KB`);
+
+      if (img.name === 'lumiere-hero') {
+        fs.copyFileSync(cardWebp, 'assets/lumiere-preview.webp');
+        fs.copyFileSync(cardAvif, 'assets/lumiere-preview.avif');
+        fs.copyFileSync(cardPng, 'assets/lumiere-preview.png');
+        console.log('  -> Also copied to assets/lumiere-preview.webp');
+      }
     }
 
     console.log(`  -> WebP (full): ${(webpSize / 1024).toFixed(1)} KB | AVIF: ${(avifSize / 1024).toFixed(1)} KB | Thumb: ${(thumbWebpSize / 1024).toFixed(1)} KB`);
